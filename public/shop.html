@@ -1,0 +1,38 @@
+<!-- public/shop.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Your head content, including CSS and fonts -->
+</head>
+
+<body>
+    <div>
+        <h1>Welcome to the Shop!</h1>
+        <div class="smiley-face-container">
+            <!-- Smiley Face Toggle Button -->
+            <div id="smiley-face-toggle">😊</div>
+        </div>
+        <!-- Add more shop content here -->
+        <a href="/">Go back to Home</a>
+    </div>
+
+    <!-- Smiley Face Toggle Button Script -->
+    <script>
+        document.getElementById('smiley-face-toggle').addEventListener('click', function () {
+            const smileyFace = '😊';
+            const frownyFace = '😟';
+            const currentFace = this.textContent;
+
+            this.textContent = currentFace === smileyFace ? frownyFace : smileyFace;
+        });
+    </script>
+
+<footer>
+    <link rel="stylesheet" href="hf_styles.css">
+    <p>Visit our GitHub repository: <a href="https://github.com/adaliebc/startup_code" target="_blank">GitHub Repository</a></p>
+</footer>
+</body>
+
+</html>
