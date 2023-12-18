@@ -1,6 +1,6 @@
-// src/App.js
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/Home';
 import BlogPage from './components/BlogPage';
 import ShopPage from './components/ShopPage';
@@ -10,13 +10,13 @@ import FaqPage from './components/Faq';
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/blog" component={BlogPage} />
-        <Route path="/shop" component={ShopPage} />
-        <Route path="/contact" component={ContactPage} />
-        <Route path="/faq" component={FaqPage} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/shop" element={<ShopPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/faq" element={<FaqPage />} />
+      </Routes>
     </Router>
   );
 };
