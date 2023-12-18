@@ -7,7 +7,7 @@ const ShopPage = () => {
   // Function to handle the click event and update the color
   const handleHeartClick = () => {
     // Toggle between black and red (or any other colors you prefer)
-    setHeartColor(heartColor === 'black' ? 'red' : 'black');
+    setHeartColor(heartColor === 'pink' ? 'red' : 'pink');
   };
 
   return (
