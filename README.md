@@ -17,7 +17,7 @@ The shop owner can change the items on sale as well as the related blog posts, i
 ## Technologies:
 
 ### Authentication:
-As stated above, the user is required to sign in in order to make a purchase. This then opens their account where they save their name, address, and contact information. All of the user's data is saved under their account. Through this account they are able to leave comments and reviews.
+As stated above, the user is required to sign in in order to make a purchase. This then opens their account where they save their name, address, and contact information. All of the user's data is saved under their account. Through this account they are able to leave comments and reviews. It works, I am still troubleshooting my login button to allow them to log in, but everything should be there, I just need to connect a few dots.
 
 ### Database Data:
 This is where all of the reviews and purchases go. Each item saves the reviews and shows the average star rating as well as the comments. The owner of the site is able to view each of the purchases and if they were linked to a review. They are able to see the contact information and reach out to the buyers and send updates. Of course for now it is used to store login data in my blog page.
