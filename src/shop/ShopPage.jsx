@@ -12,19 +12,19 @@ const ShopPage = () => {
 
   return (
     <div>
-    <div className="banner">
-      <h1 className="site-title">Fiber Art Faerie</h1>
-      <div className="menu" id="menu">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/shop">Shop</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/faq">FAQs</a></li>
-        </ul>
+      <div className="banner">
+        <h1 className="site-title">Fiber Art Faerie</h1>
+        <div className="menu" id="menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/faq">FAQs</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div>
+
       {/* Your shop page content goes here */}
       <div className="welcome-message">
         <h1>Welcome to the Shop!</h1>
@@ -35,15 +35,33 @@ const ShopPage = () => {
       <button
         className="heart-button"
         onClick={handleHeartClick}
-        style={{ color: heartColor, fontSize: '120px', border: 'none', background: 'none', cursor: 'pointer' }}
+        style={{ color: heartColor, fontSize: '120px', border: 'none', background: 'none', cursor: 'pointer', display: 'block', margin: 'auto' }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" height="64" width="64" viewBox="0 0 512 512">
-          <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
+          <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v-5.8c0 41.5 17.2 81.2 47.6 109.5z"/>
         </svg>
       </button>
 
-      {/* Your shop items and other components go here */}
-    </div>
+      {/* Fake shop listings */}
+      <div className="shop-listings">
+        <div className="shop-item">
+          <h3>Product 1</h3>
+          <p>Description of Product 1.</p>
+          <p>Price: $19.99</p>
+        </div>
+
+        <div className="shop-item">
+          <h3>Product 2</h3>
+          <p>Description of Product 2.</p>
+          <p>Price: $29.99</p>
+        </div>
+
+        <div className="shop-item">
+          <h3>Product 3</h3>
+          <p>Description of Product 3.</p>
+          <p>Price: $39.99</p>
+        </div>
+      </div>
     </div>
   );
 };
