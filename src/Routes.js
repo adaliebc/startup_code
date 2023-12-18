@@ -1,11 +1,11 @@
-// Routes.js
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './components/Home';
-import BlogPage from './components/BlogPage';
-import ShopPage from './components/ShopPage';
-import ContactPage from './components/ContactPage';
-import Faq from './components/Faq';
+import BlogPage from './blog/BlogPage';
+import ShopPage from './shop/ShopPage';
+import ContactPage from './contact/ContactPage';
+import Faq from './faq/Faq';
 
 const Routes = () => {
   return (
