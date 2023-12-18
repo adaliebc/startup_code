@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 const BlogPage = () => {
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const history = useHistory();
 
   useEffect(() => {
     checkLoginStatus();
@@ -16,10 +14,9 @@ const BlogPage = () => {
     setIsLoggedIn(!!userName);
   };
 
-  const addComment = () => {
+  const addComment = async () => {
     if (!isLoggedIn) {
       // Redirect to login page or show a login modal
-      history.push('/login');
       return;
     }
 
@@ -40,8 +37,9 @@ const BlogPage = () => {
   };
 
   const handleLoginClick = () => {
-    // Redirect to the login page
-    history.push('/login');
+    // Show your login modal or redirect to the login page
+    // You can implement your login logic here
+    // Example: loginUser();
   };
 
   return (
@@ -64,9 +62,13 @@ const BlogPage = () => {
           <h1>Simple Blog</h1>
         </div>
         <div className="user-info" id="user-info">
-          {isLoggedIn && (
+          {isLoggedIn ? (
             <div>
               <p>Hello, <span id="playerName">{localStorage.getItem('userName')}</span>!</p>
+            </div>
+          ) : (
+            <div>
+              <button onClick={handleLoginClick}>Login</button>
             </div>
           )}
         </div>
@@ -97,14 +99,6 @@ const BlogPage = () => {
           />
           <button onClick={addComment} disabled={!isLoggedIn}>Add Comment</button>
         </div>
-      </div>
-
-      <div className="login-button-container">
-        {!isLoggedIn && (
-          <button className="login-button" onClick={handleLoginClick}>
-            Log In to Comment
-          </button>
-        )}
       </div>
 
       <footer>
