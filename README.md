@@ -17,17 +17,19 @@ The shop owner can change the items on sale as well as the related blog posts, i
 ## Technologies:
 
 ### Authentication:
-As stated above, the user is required to sign in in order to make a purchase. This then opens their account where they save their name, address, and contact information. All of the user's data is saved under their account. Through this account they are able to leave comments and reviews. I have it integrated like the simon login.
+As stated above, the user is required to sign in in order to make a purchase. This then opens their account where they save their name, address, and contact information. All of the user's data is saved under their account. Through this account they are able to leave comments and reviews.
 
 ### Database Data:
-This is where all of the reviews and purchases go. Each item saves the reviews and shows the average star rating as well as the comments. The owner of the site is able to view each of the purchases and if they were linked to a review. They are able to see the contact information and reach out to the buyers and send updates. I was able to connect Simon to my database, and am playing around with adding it to my startup. It is linked, but I am still figuring out the logistics.
+This is where all of the reviews and purchases go. Each item saves the reviews and shows the average star rating as well as the comments. The owner of the site is able to view each of the purchases and if they were linked to a review. They are able to see the contact information and reach out to the buyers and send updates. Of course for now it is used to store login data in my blog page.
 
 ### Websocket Data:
-This is how the comments and reviews are entered into the site. You can see the most recent comments and reviews, respond to those, ask questions, etc. Through the Simon database I was able to play around with this data. I was able to connect it to my database and display it onto my simon webpage. I have that linked to my blog page.
+This is how the comments and reviews are entered into the site. You can see the most recent comments and reviews, respond to those, ask questions, etc. Through the Simon database I was able to play around with this data. I was able to connect it to my database and display it onto my simon webpage. I have that linked to my blog page. It is still a bit buggy but the code is there, I just need to fix it.
 
 ### React Data:
-I have created react data, which you will see inside my src folder. I have created the button in my shop.html but the app itself is separate because I cannot figure out how to integrate it right
+I have created react data, which you will see inside my src folder. The whole website is now run on react! 
 
+### Services
+I have integrated the services folder that has all of the database information and the linking code to keep my website working.
 
 
 ### HTML
@@ -37,4 +39,4 @@ All webpages are written out, they are linked together and have different things
 There is a consistant color scheme and font going through the site.
 
 ### JS
-JSON is working towards developing an authentication system and maybe one day I can link with PayPal and create secure payments.
+Most of my code is written in JSX now, but I still have JS inside if it is not directly affecting a page.
