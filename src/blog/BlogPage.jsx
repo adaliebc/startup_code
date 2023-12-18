@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const BlogPage = () => {
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     checkLoginStatus();
@@ -17,6 +19,7 @@ const BlogPage = () => {
   const addComment = () => {
     if (!isLoggedIn) {
       // Redirect to login page or show a login modal
+      history.push('/login');
       return;
     }
 
@@ -34,6 +37,11 @@ const BlogPage = () => {
       socket.send(JSON.stringify(newComment));
       setCommentInput('');
     };
+  };
+
+  const handleLoginClick = () => {
+    // Redirect to the login page
+    history.push('/login');
   };
 
   return (
@@ -89,6 +97,14 @@ const BlogPage = () => {
           />
           <button onClick={addComment} disabled={!isLoggedIn}>Add Comment</button>
         </div>
+      </div>
+
+      <div className="login-button-container">
+        {!isLoggedIn && (
+          <button className="login-button" onClick={handleLoginClick}>
+            Log In to Comment
+          </button>
+        )}
       </div>
 
       <footer>
