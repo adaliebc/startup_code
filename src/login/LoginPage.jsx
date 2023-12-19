@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 const LoginPage = () => {
-  const history = useHistory();
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    // Add your authentication logic here
-    // For simplicity, this example checks if the username is "demo" and the password is "password"
-    if (username === 'demo' && password === 'password') {
-      // Authentication successful
-      localStorage.setItem('userName', username);
-      history.push('/'); // Redirect to the home page after successful login
+  const loginUser = async () => {
+    await loginOrCreate('/api/auth/login');
+  };
+
+  const createUser = async () => {
+    await loginOrCreate('/api/auth/create');
+  };
+
+  const loginOrCreate = async (endpoint) => {
+    const response = await fetch(endpoint, {
+      method: 'post',
+      body: JSON.stringify({ email: userName, password }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    if (response.ok) {
+      localStorage.setItem('userName', userName);
+      window.location.href = '/'; // Redirect to home page
     } else {
-      // Authentication failed
-      setError('Invalid username or password');
+      const body = await response.json();
+      setError(`⚠ Error: ${body.msg}`);
     }
   };
 
@@ -26,24 +37,29 @@ const LoginPage = () => {
       {error && <div className="error-message">{error}</div>}
       <form>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="userName">Username:</label>
           <input
             type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            id="userName"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="userPassword">Password:</label>
           <input
             type="password"
-            id="password"
+            id="userPassword"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="button" onClick={handleLogin}>Login</button>
+        <button type="button" onClick={loginUser}>
+          Login
+        </button>
+        <button type="button" onClick={createUser}>
+          Create Account
+        </button>
       </form>
     </div>
   );
