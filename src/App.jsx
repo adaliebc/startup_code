@@ -6,6 +6,7 @@ import BlogPage from './blog/BlogPage';
 import ShopPage from './shop/ShopPage';
 import ContactPage from './contact/ContactPage';
 import FaqPage from './faq/Faq';
+import LoginPage from './login/LoginPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/login" component={<LoginPage />} />
       </Routes>
     </Router>
   );

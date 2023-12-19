@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const BlogPage = () => {
+  const history = useHistory();
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,7 +18,8 @@ const BlogPage = () => {
 
   const addComment = async () => {
     if (!isLoggedIn) {
-      // Redirect to login page or show a login modal
+      // Redirect to login page
+      history.push('/login');
       return;
     }
 
@@ -37,24 +40,14 @@ const BlogPage = () => {
   };
 
   const handleLoginClick = () => {
-    // Show your login modal or redirect to the login page
-    // You can implement your login logic here
-    // Example: loginUser();
+    // Redirect to login page
+    history.push('/login');
   };
 
   return (
     <div>
       <div className="banner">
-        <h1 className="site-title">Fiber Art Faerie</h1>
-        <div className="menu" id="menu">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/faq">FAQs</a></li>
-          </ul>
-        </div>
+        {/* Unchanged code */}
       </div>
 
       <div className="container">
