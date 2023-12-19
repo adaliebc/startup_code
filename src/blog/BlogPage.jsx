@@ -46,7 +46,21 @@ const BlogPage = () => {
   return (
     <div>
       <div className="banner">
-        {/* Unchanged code */}
+        <h1 className="site-title">Fiber Art Faerie</h1>
+        <div className="menu" id="menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/faq">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+
+    <div>
+      <div className="banner">
+      
       </div>
 
       <div className="container">
@@ -96,6 +110,7 @@ const BlogPage = () => {
       <footer>
         <p>Visit our GitHub repository: <a href="https://github.com/adaliebc/startup" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
       </footer>
+    </div>
     </div>
   );
 };
