@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const BlogPage = () => {
-  const history = useHistory();
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,8 +16,8 @@ const BlogPage = () => {
 
   const addComment = async () => {
     if (!isLoggedIn) {
-      // Redirect to login page
-      history.push('/login');
+      // Redirect to login page using <a> tag
+      window.location.href = '/login';
       return;
     }
 
@@ -38,11 +37,6 @@ const BlogPage = () => {
     };
   };
 
-  const handleLoginClick = () => {
-    // Redirect to login page
-    history.push('/login');
-  };
-
   return (
     <div>
       <div className="banner">
@@ -58,11 +52,6 @@ const BlogPage = () => {
         </div>
       </div>
 
-    <div>
-      <div className="banner">
-      
-      </div>
-
       <div className="container">
         <div className="header">
           <h1>Simple Blog</h1>
@@ -74,7 +63,8 @@ const BlogPage = () => {
             </div>
           ) : (
             <div>
-              <button onClick={handleLoginClick}>Login</button>
+              {/* Use <a> tag to navigate to the login page */}
+              <a href="/login">Login</a>
             </div>
           )}
         </div>
@@ -110,7 +100,6 @@ const BlogPage = () => {
       <footer>
         <p>Visit our GitHub repository: <a href="https://github.com/adaliebc/startup" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
       </footer>
-    </div>
     </div>
   );
 };
