@@ -30,7 +30,7 @@ const BlogPage = () => {
       text: commentInput,
     };
 
-    const socket = new WebSocket('ws://localhost:4000');
+    const socket = new WebSocket('ws://localhost:3001');
     socket.onopen = () => {
       socket.send(JSON.stringify(newComment));
       setCommentInput('');

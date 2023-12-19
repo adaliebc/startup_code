@@ -14,23 +14,22 @@ const LoginPage = () => {
     await loginOrCreate('/api/auth/create');
   };
 
-  const loginOrCreate = async (endpoint) => {
+  async function loginOrCreate(endpoint) {
     const response = await fetch(endpoint, {
       method: 'post',
-      body: JSON.stringify({ email: userName, password }),
+      body: JSON.stringify({email: userName, password: password}),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-
-    if (response.ok) {
+    if (response?.status === 200) {
       localStorage.setItem('userName', userName);
-      window.location.href = '/'; // Redirect to home page
+      props.onLogin(userName);
     } else {
       const body = await response.json();
-      setError(`⚠ Error: ${body.msg}`);
+      setDisplayError(`⚠ Error: ${body.msg}`);
     }
-  };
+  }
 
   return (
     <div className="login-container">
