@@ -30,7 +30,7 @@ const BlogPage = () => {
       text: commentInput,
     };
 
-    const socket = new WebSocket('ws://localhost:3001');
+    const socket = new WebSocket('ws://localhost:4000');
     socket.onopen = () => {
       socket.send(JSON.stringify(newComment));
       setCommentInput('');
@@ -63,7 +63,6 @@ const BlogPage = () => {
             </div>
           ) : (
             <div>
-              {/* Use <a> tag to navigate to the login page */}
               <a href="/login">Login</a>
             </div>
           )}
