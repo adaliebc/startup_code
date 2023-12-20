@@ -32,6 +32,20 @@ const LoginPage = () => {
   }
 
   return (
+    <div>
+      <div className="banner">
+        <h1 className="site-title">Fiber Art Faerie</h1>
+        <div className="menu" id="menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/faq">FAQs</a></li>
+          </ul>
+        </div>
+      </div>
+
     <div className="login-container">
       <h2>Login</h2>
       {error && <div className="error-message">{error}</div>}
@@ -61,6 +75,7 @@ const LoginPage = () => {
           Create Account
         </button>
       </form>
+    </div>
     </div>
   );
 };
