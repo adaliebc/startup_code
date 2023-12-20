@@ -24,10 +24,10 @@ const LoginPage = () => {
     });
     if (response?.status === 200) {
       localStorage.setItem('userName', userName);
-      props.onLogin(userName);
+      //props.onLogin(userName);
     } else {
       const body = await response.json();
-      setDisplayError(`⚠ Error: ${body.msg}`);
+      setError(`⚠ Error: ${body.msg}`);
     }
   }
 

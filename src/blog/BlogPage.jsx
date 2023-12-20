@@ -34,8 +34,18 @@ const BlogPage = () => {
     socket.onopen = () => {
       socket.send(JSON.stringify(newComment));
       setCommentInput('');
+      socket.onmessage = (event) => {
+        console.log('received: ', event.data);
+ 
+        setComments(comments => [
+          ...comments,
+          {"id":JSON.parse(event.data)["id"],"text":JSON.parse(event.data)["text"]}
+        ])
+ 
+        console.log('comments: ', comments);
     };
   };
+};
 
   return (
     <div>
